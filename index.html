@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Fest Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="page">
+        <section class="card" id="formCard">
+            <h1>Tech Fest Registration</h1>
+            <p class="intro">Register for workshops and be part of the Tech Fest.</p>
+
+            <form id="registrationForm" novalidate>
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName"
+                           placeholder="Enter your full name" minlength="3" required>
+                    <div class="error-message" id="fullNameError"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email"
+                           placeholder="name@example.com" required>
+                    <div class="error-message" id="emailError"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone"
+                           placeholder="03XX-XXXXXXX">
+                    <div class="error-message" id="phoneError"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="year">Year of Study</label>
+                    <select id="year" name="year" required>
+                        <option value="">Select year</option>
+                        <option value="Year 1">Year 1</option>
+                        <option value="Year 2">Year 2</option>
+                        <option value="Year 3">Year 3</option>
+                        <option value="Year 4">Year 4</option>
+                    </select>
+                    <div class="error-message" id="yearError"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password"
+                           placeholder="Minimum 8 characters" minlength="8" required>
+                    <div class="error-message" id="passwordError"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword"
+                           placeholder="Re-enter password" minlength="8" required>
+                    <div class="error-message" id="confirmPasswordError"></div>
+                </div>
+
+                <fieldset>
+                    <legend>Workshops <span>(select at least one)</span></legend>
+                    <label class="check-option">
+                        <input type="checkbox" name="workshops" value="Web Development">
+                        Web Development
+                    </label>
+                    <label class="check-option">
+                        <input type="checkbox" name="workshops" value="AI">
+                        AI
+                    </label>
+                    <label class="check-option">
+                        <input type="checkbox" name="workshops" value="Cyber Security">
+                        Cyber Security
+                    </label>
+                    <div class="error-message" id="workshopsError"></div>
+                </fieldset>
+
+                <div class="form-group">
+                    <label for="comments">Comments</label>
+                    <textarea id="comments" name="comments"
+                              placeholder="Anything you would like us to know?"></textarea>
+                </div>
+
+                <label class="terms">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    I agree to the terms and conditions.
+                </label>
+                <div class="error-message" id="termsError"></div>
+
+                <button type="submit">Register</button>
+            </form>
+        </section>
+
+        <section class="card confirmation hidden" id="confirmationCard">
+            <h1>Thank You!</h1>
+            <p>Your Tech Fest registration has been received.</p>
+            <div class="summary">
+                <p><strong>Name:</strong> <span id="summaryName"></span></p>
+                <p><strong>Email:</strong> <span id="summaryEmail"></span></p>
+                <p><strong>Year:</strong> <span id="summaryYear"></span></p>
+                <p><strong>Workshops:</strong> <span id="summaryWorkshops"></span></p>
+            </div>
+            <button type="button" id="anotherButton">Register another person</button>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
