@@ -30,7 +30,8 @@ rendering it as bold HTML.
 The ASP.NET version uses Server.HtmlEncode before displaying user input.
 
 TASK 8 CRUD
-The supplied lab sheet only states "Perform the CRUD operations on this form"
-and does not specify a database schema, connection string, or CRUD UI. Therefore
-the core Tasks 1-4 are implemented completely without inventing a database
-requirement.
+The HTML version supports creating, viewing, updating, and deleting registrations.
+It stores registrations in this browser's localStorage, so records are available
+again when the same browser opens the page. This is local to one browser and is
+not a shared database. Passwords are validated on registration but are never
+saved in the registry.
